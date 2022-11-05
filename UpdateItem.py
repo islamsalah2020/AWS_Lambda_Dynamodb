@@ -10,9 +10,9 @@ table = dynamodb.Table('planets')
 def lambda_handler(event, context):
     response = table.update_item(
     Key={"id": "mercury"},
-    UpdateExpression="set size=:size",
+    UpdateExpression="set size=:value",
         ExpressionAttributeValues={
-            ":size": "900000000km2"
+            ":value": "900000000km2"
         },
         ReturnValues="UPDATED_NEW"
 )
