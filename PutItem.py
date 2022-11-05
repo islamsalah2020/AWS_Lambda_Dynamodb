@@ -9,13 +9,14 @@ table = dynamodb.Table('planets')
 
 def lambda_handler(event, context):
     table.put_item(
-    Item={'id': 'earth', 'temp': 'super cool'}
+    Item={'id': 'neptune', 'temp': 'spuer cool'}
     )
     
     response = {
-      'message': 'Item added'
+        'message': 'item added'
     }
-    
+    print (response)
+    # TODO implement
     return {
         'statusCode': 200,
         'body': response
